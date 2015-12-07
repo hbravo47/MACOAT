@@ -1,0 +1,24 @@
+<%= form_for(@user) do |f| %>
+    <%= render 'shared/error_messages', object: f.object %>
+    <div class="field">
+        <%= f.label :name, class: "required" %><br>
+        <%= f.text_field :name %>
+    </div>
+    <div class="field">
+        <%= f.label :address, class: "required" %><br>
+        <%= f.text_field :address %>
+    </div>
+    <div class="field">
+        <%= f.label :cardnumber, class: "required" %><br>
+        <%= f.text_field :cardnumber %>
+    </div>
+    <div class="field">
+        <%= f.label :password, class: "required" %><br>
+        <%= f.password_field :password %>
+    </div>
+    <div class="field">
+        <%= f.label :password_confirmation, "Confirmation", class: "required" %><br>
+        <%= f.password_field :password_confirmation %>
+    </div>
+    <%= f.submit %>
+<% end %>

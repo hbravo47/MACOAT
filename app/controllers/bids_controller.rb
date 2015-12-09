@@ -8,15 +8,15 @@ class BidsController < ApplicationController
   def create
     @bid = Bid.new(bid_params)
     if @bid.save
-      redirect_to @bid.item, notice: "Bid made!"
+      redirect_to @bid.item, notice: "You have successfully bidded."
     else
-      redirect_to @bid.item, notice: "Cannot place a bid"
+      redirect_to @bid.item, notice: "Your Bid could not be placed."
     end
   end
 
   def destroy
     @bid.destroy
-    redirect_to @item, notice: "Bid deleted"
+    redirect_to @item, notice: "Your bid has been deleted."
   end
 
   private
@@ -26,9 +26,6 @@ class BidsController < ApplicationController
     #   signed_in? && current_user.id != @item.user_id
     # end
 
-    # def auth_destroy_bid
-    #   signed_in? && current_user.admin
-    # end
 
     def set_bid
       @bid = Bid.find(params[:id])

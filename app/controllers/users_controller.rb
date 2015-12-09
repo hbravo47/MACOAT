@@ -31,12 +31,12 @@ class UsersController < ApplicationController
       sign_in @user
       redirect_to @user, notice: "Welcome to MacOfAllTrades!"
     else
-      render action: 'new', notice: "Couldn't create your profile"
+      render action: 'new', notice: "Error creating profile."
     end
   end
   def update
     if @user.update(user_update_params)
-      redirect_to @user, notice: "Profile updated successfully"
+      redirect_to @user, notice: "Changes have been made to your account."
     else
       render action: 'edit'
     end
@@ -45,7 +45,7 @@ class UsersController < ApplicationController
   def destroy
     sign_out
     @user.destroy
-    redirect_to users_path, notice: "User deleted"
+    redirect_to users_path, notice: "Account has been deleted."
   end
 
   private
@@ -53,19 +53,19 @@ class UsersController < ApplicationController
     def check_show_user
       unless signed_in?
         store_location
-        redirect_to signin_path, notice: "Please sign in"
+        redirect_to signin_path, notice: "Sign In"
       end
     end
 
     def check_edit_user
       unless signed_in? && (@user.id == current_user.id || current_user.admin)
         store_location
-        redirect_to signin_path, notice: "Please sign in"
+        redirect_to signin_path, notice: "Sign In"
       end
     end
 
     def check_user_session
-      redirect_to current_user, notice: "You're already signed in" if signed_in?
+      redirect_to current_user, notice: "You are signed in" if signed_in?
     end
 
     def set_user

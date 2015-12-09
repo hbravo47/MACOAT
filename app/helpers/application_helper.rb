@@ -1,6 +1,6 @@
 module ApplicationHelper
 
-  def print_Mac
+  def logoHeader
     (image_tag("missing.png"))
   end
 end

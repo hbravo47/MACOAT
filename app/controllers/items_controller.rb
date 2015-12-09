@@ -9,13 +9,11 @@ class ItemsController < ApplicationController
 
   def index
     if (params[:search] && params[:category])
-      # this will search the DB for the specified params
-      # and return them ordered by last created first
       @items = Item.search(params[:search], params[:category]).order("created_at DESC")
     else
       @items = Item.all
     end
-    # then paginate the items
+    #pagination
     @items = @items.paginate(page: params[:page], per_page: 5)
   end
 
@@ -35,9 +33,9 @@ class ItemsController < ApplicationController
 
   def create
     @item = Item.new(item_params)
-    if @item.save   #success
+    if @item.save   
       redirect_to @item, notice: "Item Auction has been created and has started."
-    else            # failure
+    else          
       render action: 'new'
     end
   end
@@ -81,13 +79,9 @@ class ItemsController < ApplicationController
       end
     end
 
-    # this method collects the category names and id's
-    # for the dropdown menu in the form
     def set_categories
       @categories = Category.all.collect { |c| [c.name, c.id] }
     end
-
-    # sets the days with datetimes for the new item form
     def set_days
       @days = []
       (1..30).each do |i|

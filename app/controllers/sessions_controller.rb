@@ -16,7 +16,7 @@ class SessionsController < ApplicationController
     end
     
     rescue BCrypt::Errors::InvalidHash
-      flash[:error] = 'We recently adjusted the way our passwords are stored. Please click the "forgot username or password?" link to re-establish your password. Thank you for your understanding!'
+      flash[:error] = 'Click forgot username/password to reset your password.'
       redirect_to password_resets_url
   end
 
@@ -32,6 +32,6 @@ class SessionsController < ApplicationController
     end
 
     def check_destroy_session
-      redirect_to signin_path, notice: "Please sign in" unless signed_in?
+      redirect_to signin_path, notice: "Sign In." unless signed_in?
     end
 end

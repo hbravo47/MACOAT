@@ -20,7 +20,7 @@ class CategoriesController < ApplicationController
     @category = Category.new(category_params)
 
     if @category.save
-      redirect_to @category, notice: 'Category was successfully created.'
+      redirect_to @category, notice: 'Category created.'
     else
       render action: 'new'
     end
@@ -28,7 +28,7 @@ class CategoriesController < ApplicationController
   
   def update
     if @category.update(category_params)
-      redirect_to @category, notice: 'Category was successfully updated.'
+      redirect_to @category, notice: 'Category has been updated.'
     else
       render action: 'edit'
     end
@@ -44,7 +44,7 @@ class CategoriesController < ApplicationController
     def check_user_admin
       unless signed_in? && current_user.admin
         store_location
-        redirect_to signin_path, notice: "Please sign in"
+        redirect_to signin_path, notice: "Sign In"
       end
     end
 

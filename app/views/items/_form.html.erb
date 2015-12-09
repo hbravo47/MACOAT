@@ -15,12 +15,12 @@
     <div class="field">
         Category<br>
         <%= f.select(:category_id, options_for_select(@categories, selected: @item.category_id),
-                     prompt: "Select a category") %>
+                     prompt: "Select Category") %>
     </div>
     <div class="field">
         Auction duration<br>
         <%= f.select(:finish_time, options_for_select(@days),
-                     prompt: "How many days?") %>
+                     prompt: "Keep auction open for how many days?") %>
     </div>
     <div class="field">
         Upload image<br>

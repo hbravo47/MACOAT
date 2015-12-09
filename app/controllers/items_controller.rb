@@ -36,7 +36,7 @@ class ItemsController < ApplicationController
   def create
     @item = Item.new(item_params)
     if @item.save   #success
-      redirect_to @item, notice: "Item created successfully"
+      redirect_to @item, notice: "Item Auction has been created and has started."
     else            # failure
       render action: 'new'
     end
@@ -44,7 +44,7 @@ class ItemsController < ApplicationController
 
   def update
     if @item.update(item_params)
-      redirect_to @item, notice: "Item updated successully"
+      redirect_to @item, notice: "Auction has been updated."
     else
       render action: 'edit'
     end
@@ -52,7 +52,7 @@ class ItemsController < ApplicationController
 
   def destroy
     @item.destroy
-    redirect_to root_path, notice: "Item deleted"
+    redirect_to root_path, notice: "Auction has been terminated."
   end
 
   private
@@ -60,14 +60,14 @@ class ItemsController < ApplicationController
     def auth_new_item
       unless signed_in?
         store_location
-        redirect_to signin_path, notice: "Please sign in"
+        redirect_to signin_path, notice: "Sign In."
       end
     end
 
     def auth_edit_update_destroy_item
       unless signed_in? && (@item.user_id == current_user.id || current_user.admin)
         store_location
-        redirect_to signin_path, notice: "Please sign in"
+        redirect_to signin_path, notice: "Sign In."
       end
     end
 
@@ -77,7 +77,7 @@ class ItemsController < ApplicationController
 
     def auth_edit_update_no_bids
       if @item.bids.count > 0
-        redirect_to @item, notice: "This item has been bid on and cannot be edited"
+        redirect_to @item, notice: "The auction has bids, listing can not be edited."
       end
     end
 

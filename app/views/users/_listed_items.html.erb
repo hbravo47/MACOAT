@@ -1,11 +1,11 @@
 <div id="listed-items">
   <h1>
     <% if current_user.id == @user.id %>
-      You are
+      Your current
     <% else %>
       <%= @user.name.split.first %> is
     <% end %>
-     selling >
+     auctions >
   </h1>
 
   <%= will_paginate @items, param_name: :items_page %>

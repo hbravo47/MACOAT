@@ -1,6 +1,6 @@
 module ApplicationHelper
 
   def logoHeader
-    (image_tag("missing.png"))
+    (image_tag("placeholder.png"))
   end
 end

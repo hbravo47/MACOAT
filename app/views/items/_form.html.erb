@@ -22,10 +22,10 @@
         <%= f.select(:finish_time, options_for_select(@days),
                      prompt: "Keep auction open for how many days?") %>
     </div>
-    <div class="field">
+    <!--<div class="field">
         Upload image<br>
         <%= f.file_field :image_preview %>
-    </div>
+    </div>-->
     <%= f.hidden_field :user_id, value: current_user.id %>
-    <%= f.submit "List item" %>
+    <%= f.submit "Create" %>
 <% end %>

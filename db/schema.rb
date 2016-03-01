@@ -50,8 +50,6 @@ ActiveRecord::Schema.define(version: 20140203102540) do
 
   create_table "users", force: true do |t|
     t.string   "name"
-    t.string   "address"
-    t.string   "cardnumber"
     t.string   "email"
     t.datetime "created_at"
     t.datetime "updated_at"

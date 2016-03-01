@@ -84,8 +84,6 @@ h1, h2, h3, h4, h5, h6 {
 span {
   letter-spacing: -0.1em;
 }
-
-
 nav#main-nav {
   width: 960px;
   height: 150px;
@@ -99,7 +97,6 @@ nav#main-nav {
   }
   ul {
     line-height: 100px;
-    /*float: center;*/
     text-align:center;
     color: white;
     li {
@@ -272,7 +269,7 @@ strong {
 #notice {
   text-align: center;
   padding: 10px 0;
-  color: white;
+  color: black;
   font-size: 1.2em;
   background-color: #5eaad5;
 }
@@ -338,7 +335,7 @@ div.item-articles {
 
 
 article.item-preview {
-  background-color: white;
+  background-color: #D8D8D8;
   position: relative;
   z-index: 100;
   border-bottom: 1px solid black;
@@ -369,6 +366,7 @@ article.item-preview {
     margin: 0 20px 20px 20px;
     float: left;
     display: block;
+    font-color: black;
     h2, h3 {
       text-align: left;
       margin-top: 20px;
@@ -386,10 +384,13 @@ article.item-details {
   -webkit-box-sizing: border-box; 
   -moz-box-sizing: border-box; 
   box-sizing: border-box;
-  width: 70%; 
-  margin: 0 auto;
+  width: 63%; 
+  //margin: 0 auto;
+  margin: 30px 30px 30px;
   float: right;
   padding: 10px 30px 30px 30px;
+  background-color: #D8D8D8;
+  border-radius: 10px;
   div.image {
     width: 256px;
     height: 256px;
@@ -424,6 +425,7 @@ article.item-details {
   h3 {
     text-align: left;
     padding-left: 40px;
+    font-color: black;
   }
   h4 {
     text-align: left;
@@ -457,7 +459,7 @@ aside#item-sidebar {
   width: 35%;
   padding: 20px;
   border-right: 1px solid #D6D6D6;
-  margin-top: 20px;
+  margin-top: -590px;
   h2 {
     text-align: center;
     font-size: 1em;
@@ -468,7 +470,7 @@ aside#item-sidebar {
 
 div.pagination {
   text-align: center;
-  background-color: #5eaad5;
+  background-color: black;
   padding: 10px;
   color: white;
   a {
@@ -480,11 +482,6 @@ div.pagination {
 }
 
 /* PROFILE PAGE STYLES */
-
-/*.gravatar {
-  -webkit-border-radius: 5px;
-  border-radius: 5px;
-}*/
 
 aside#profile-panel {
   margin-top: 20px;
@@ -522,7 +519,7 @@ aside#profile-panel {
   font-weight: 600;
   -webkit-border-radius: 10px;
   border-radius: 10px;
-  background-color: #D6D6D6;
+  background-color: #D8D8D8;
 
   .title {
     text-align: center;
@@ -577,6 +574,7 @@ div#listed-items {
     height: 130px;
     padding: 10px;
     border-bottom: 1px solid #D6D6D6;
+    background-color: #D8D8D8;
     img {
       float: left;
       width: 120px;
@@ -591,13 +589,13 @@ div#listed-items {
     h2 {
       font-size: 1.4em;
       padding: 10px 0;
+      font-clor: black;
     }
     p {
       font-size: 1em;
       font-style: italic;
     }
   }
-  
 }
 
 
@@ -644,12 +642,12 @@ form {
 
 
 footer {
-  background-image: url('home_banner.jpg');
-  margin-left: 243px;
+  background-image: url('biglogo.jpg');
+  margin-left: 220px;
   text-align: left;
   -webkit-border-radius: 20px;
   border-radius: 20px;
-  width: 960px;
+  width: 890px;
   background-color: white;
   color: black;
   clear: both;
@@ -680,3 +678,32 @@ footer {
 .field_with_errors {
   display: inline;
 }
+
+static {
+  h2, p {
+  text-align: center;
+  }
+}
+
+div.home-header {
+  background-image: url('MAC.jpg');
+  width: 960px;
+  height: 550px;
+  position: relative;
+  -webkit-border-radius: 20px;
+  border-radius: 20px;
+  h1 {
+    color: #000000;
+  }
+}
+
+.about-info {
+  vertical-align: top;
+  display: inline-block;
+  text-align: center;
+  width: 960px;
+  h2 {
+    font-size: 2em;
+  }
+}
+

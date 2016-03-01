@@ -21,6 +21,13 @@ User.create!(
   password_confirmation: "jason2010",
 )
 
+User.create!(
+  name: "Jonathan",
+  email: "jonathan@gmail.com",
+  password: 'jmoney2010',
+  password_confirmation: "jmoney2010",
+)
+
 
 Category.delete_all
 Category.create!(
@@ -42,3 +49,4 @@ Category.create!(
 	name: "Accessories",
 	description: "",
 )
+

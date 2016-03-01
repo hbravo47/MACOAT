@@ -7,7 +7,7 @@ class Item < ActiveRecord::Base
 
   has_attached_file :image_preview, 
                     :styles => { :medium => "256x256#", :thumb => "180x180#" },
-                    :default_url => "missing.png"
+                    :default_url => "newItem.jpg"
   validates_attachment_content_type :image_preview, 
   :content_type => ['image/jpg', 'image/jpeg', 'image/png', 'image/gif']
 
